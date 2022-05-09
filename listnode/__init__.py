@@ -3,14 +3,17 @@ class ListNode:
         self.val = val
         self.next = next
 
-    def print(self):
+    def __str__(self):
         cur = self
         res = []
         while cur:
             res.append(cur.val)
             cur = cur.next
 
-        print('->'.join(str(x) for x in res))
+        return "ListNode{%s}" % '->'.join(str(x) for x in res)
+
+    def print(self):
+        print(str(self))
 
 
 def create_listnode(xlist):
@@ -24,3 +27,8 @@ def create_listnode(xlist):
             cur = cur.next
 
     return head
+
+
+if __name__ == '__main__':
+    n = create_listnode([1, 2, 3])
+    n.print()
