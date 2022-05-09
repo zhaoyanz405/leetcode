@@ -19,6 +19,9 @@ class NumMatrix:
         m = len(matrix) + 1
         n = len(matrix[0]) + 1
         # self.pre = [[0] * n] * m  # bugs?
+        # it equals
+        # row = [0] * n
+        # self.pre = [row] * m
         self.pre = [[0] * n for _ in range(m)]
 
         for i in range(1, m):
