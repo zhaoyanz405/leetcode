@@ -35,13 +35,12 @@ class Solution:
                 if window[current_char] == needs[current_char]:
                     valid += 1
 
-            while valid == len(needs):
-                # 更新最小覆盖字串
-                if right - left < length:
-                    start = left
-                    length = right - left
+            # 已经满足条件，开始收缩
+            while right - left >= len(s1):
+                # 找到一个解
+                if valid == len(needs):
+                    return True
 
-                # 已经满足条件，开始收缩
                 c = s2[left]
                 left += 1
 
@@ -51,8 +50,7 @@ class Solution:
 
                     window[c] -= 1
 
-        print(s2[start: start + length])
-        return length == len(s1)
+        return False
 
 
 if __name__ == '__main__':
