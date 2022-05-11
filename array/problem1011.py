@@ -40,7 +40,7 @@ class Solution:
             cur += w
             if cur > x:
                 cur = w
-                days +=1
+                days += 1
 
         return days
 
