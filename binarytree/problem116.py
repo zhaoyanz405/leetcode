@@ -39,3 +39,24 @@ class Solution:
             q = nex_level
 
         return root
+
+    def connect2(self, root):
+        """
+        视为三叉树
+        :param root:
+        :return:
+        """
+        if not root:
+            return
+
+        self.traverse(root.left, root.right)
+
+    def traverse(self, node1, node2):
+        if not node1 or not node2:
+            return
+
+        node1.next = node2
+
+        self.traverse(node1.left, node1.right)
+        self.traverse(node2.left, node2.right)
+        self.traverse(node1.right, node2.left)
