@@ -12,17 +12,16 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
 
-
 class Solution:
     def maxEnvelopes(self, envelopes) -> int:
         # 定义dp为env[i]最多成为多少个套娃
         # dp[i] = max(dp[j] + 1, dp[i]) if env[i] > env[j]
-        envelopes.sort()
+        envelopes.sort(key= lambda x: (x[0], -x[1]))
         dp = [1] * len(envelopes)
 
         for i in range(1, len(envelopes)):
             for j in range(i):
-                if envelopes[i][0] > envelopes[j][0] and envelopes[i][1] > envelopes[j][1]:
+                if envelopes[i][1] > envelopes[j][1]:
                     dp[i] = max(dp[i], dp[j] + 1)
 
         return max(dp)
