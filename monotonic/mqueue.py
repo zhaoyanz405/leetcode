@@ -31,13 +31,15 @@ class MonotonicQueue:
         point.next = n
         n.prev = point
 
-    def pop(self):
+    def pop(self, n=None):
         head = self.dummy.next
-        if head:
-            if head.next:
-                head.next.prev = self.dummy
+        if head and head.val != n:
+            return
 
-            head.prev.next = head.next
+        if head.next:
+            head.next.prev = self.dummy
+
+        head.prev.next = head.next
 
     def max(self):
         # 队列头的元素最大
@@ -59,11 +61,12 @@ class MonotonicQueue:
 
 if __name__ == '__main__':
     mq = MonotonicQueue()
-    mq.push(5)
-    mq.push(4)
-    mq.push(6)
-    print(mq)
-    mq.pop()
-    print(mq)
-    mq.pop()
-    print(mq)
+    for i, n in enumerate([1, 3, -1, -3, 5, 3, 6, 7]):
+        if i < 2:
+            mq.push(n)
+            print(mq)
+        else:
+            mq.push(n)
+            print('max', mq.max())
+            mq.pop()
+            print('mq', mq)
