@@ -1,21 +1,4 @@
-class Shape:
-    def draw(self):
-        pass
-
-
-class Circle(Shape):
-    def draw(self):
-        print("draw circle")
-
-
-class Square(Shape):
-    def draw(self):
-        print("draw Square")
-
-
-class Rectangle(Shape):
-    def draw(self):
-        print("draw Rectangle")
+from designpattern.creational_patterns.shape import *
 
 
 class ShapeFactory:
