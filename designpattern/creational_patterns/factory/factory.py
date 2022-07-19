@@ -1,4 +1,4 @@
-from designpattern.creational_patterns.shape import *
+from designpattern.creational_patterns.factory.shape import *
 
 
 class ShapeFactory:

@@ -1,6 +1,3 @@
-from designpattern.creational_patterns.shape import Circle, Rectangle, Square
-
-
 class Color:
     def fill(self):
         raise NotImplemented

@@ -1,5 +1,5 @@
-from designpattern.creational_patterns.color import Red, Green, Blue
-from designpattern.creational_patterns.shape import Circle, Rectangle, Square
+from designpattern.creational_patterns.factory.color import Red, Green, Blue
+from designpattern.creational_patterns.factory.shape import Circle, Rectangle, Square
 
 
 class AbstractFactory:
